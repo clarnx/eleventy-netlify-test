@@ -1,8 +1,9 @@
 ---
 layout: baseof.njk
+title: Contact Us
+permalink: /contact/
 ---
-{% import "src/_includes/macros/macros.njk" as m %}
-
+{% import "macros/macros.njk" as m %}
 <div class="">
   <section class="flex flex-wrap items-stretch">
     <div class="relative w-full min-h-[50vh] lg:min-h-full lg:w-1/2">
@@ -11,16 +12,6 @@ layout: baseof.njk
           {% imager image, title, "absolute top-0 right-0 w-full h-full object-cover object-center", "(min-width: 60em) 100vw, 10vw", "", ""%}
         {% endif %}
       </div>
-      {#
-      <aside class="mt-12 text-peach font-sans font-black">
-        <p class="mb-4 max-w-md text-xl">
-          To schedule a free 15 min. coaching consultation by phone, or to schedule a massage, call or text Erin Hurst:
-        </p>
-        <p class="text-4xl">
-          <a href="tel:15407463414" class="hover:underline">(540) 746-3414</a>
-        </p>
-      </aside>
-      #}
     </div>
     <article class="w-full lg:w-1/2 pl-4 pr-4 lg:pl-12 lg:pr-4 py-12 bg-gradient-to-r from-beige">
       <header class="mb-6">
@@ -32,49 +23,36 @@ layout: baseof.njk
       </div>
       <div class="pt-4">
         <div class="ph0 w-100">
-           <form class="" name="contact-rental" method="post" data-netlify="true" data-netlify-recaptcha="true">
+          <form name="contact-rental" method="post" data-netlify="true" data-netlify-recaptcha="true">
             <input type="hidden" name="form-name" value="contact-rental" />
             <fieldset id="sign_up" class="">
-                <div class="mb-4">
-                  <label class="sr-only" for="name">Name</label>
-                  <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Your Name" type="text" name="name"  id="name">
-                </div>
-                <div class="mb-4">
-                  <label class="sr-only" for="email-address">Email</label>
-                  <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Email" type="email" name="email-address"  id="email-address">
-                </div>
-                <div class="mb-4">
-                  <label class="sr-only" for="phone">Phone</label>
-                  <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Phone" type="text" name="phone"  id="phone">
-                </div>
+              <div class="mb-4">
+                <label class="sr-only" for="name">Name</label>
+                <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Your Name" type="text" name="name" id="name">
               </div>
               <div class="mb-4">
-                <label for="message" class="block text-purp">Message <span class="text-purp"></span></label>
+                <label class="sr-only" for="email-address">Email</label>
+                <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Email" type="email" name="email-address" id="email-address">
+              </div>
+              <div class="mb-4">
+                <label class="sr-only" for="phone">Phone</label>
+                <input class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border-b border-purp appearance-none focus:outline-none" placeholder="Phone" type="text" name="phone" id="phone">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-purp">Message</label>
                 <textarea placeholder="" id="message" name="message" rows="8" class="max-w-xs md:max-w-lg w-full block placeholder-purp bg-transparent border border-purp appearance-none focus:outline-none" aria-describedby="message-desc"></textarea>
               </div>
             </fieldset>
+            <div class="mb-4" data-netlify-recaptcha="true"></div>
             <div class="">
-              <div class="mb-4" data-netlify-recaptcha="true"></div>
-              <div class="">
-                <input class="inline-block bg-peach hover:bg-purp text-white font-sans font-black text-lg uppercase py-2 px-4 rounded-lg" type="submit" value="Submit">
-                <div class="">
-                </div>  
-              </div>
+              <input class="inline-block bg-peach hover:bg-purp text-white font-sans font-black text-lg uppercase py-2 px-4 rounded-lg cursor-pointer" type="submit" value="Submit">
             </div>
           </form>
         </div>
       </div>
-    
     </article>
-    {#
-    {% include "partials/author.njk" %}
-    <div class="mt-12">
-      {% include "partials/gallery-slider.njk" %}
-    </div>
-    #}
   </section>
 </div>
-
 {% if faq %}
 <section class="bg-peach text-white py-12">
   {% include "partials/faq.njk" %}
